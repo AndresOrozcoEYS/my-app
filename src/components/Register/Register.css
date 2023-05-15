@@ -1,0 +1,68 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos del componente de registro */
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.register h2 {
+  margin-bottom: 20px;
+}
+
+.register form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.register label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.register input[type="text"],
+    .register input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box; /* asegura que el ancho incluya el padding */
+    }
+
+.register input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+.register button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color:  #87CEEB;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.register button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.register .error {
+  color: red;
+  margin-top: 10px;
+}
