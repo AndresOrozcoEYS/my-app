@@ -102,7 +102,7 @@ const SedesCrud = () => {
       });
   };
   
-  
+  const createSede = () => {};
 
   const handleDelete = (id) => {
     // Mostrar el modal de confirmación de eliminación
@@ -148,6 +148,9 @@ const SedesCrud = () => {
     <div className="container">
       <Navbar/>
       <h1>CRUD de Sedes</h1>
+      <button className="create-button" onClick={createSede}>
+        Crear Sede
+      </button>
       {sedesData.length === 0 ? (
         <p className="no-data-message">No hay datos disponibles.</p>
       ) : (

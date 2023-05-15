@@ -9,7 +9,10 @@ const Navbar = () => {
   const navigate = useNavigate();
 
 
-  const handleLogout = () => {  
+  const handleLogout = () => {
+    // Eliminar el token del almacenamiento local
+    localStorage.removeItem('token');
+
     fetch('http://localhost:3000/users/logout', {
       method: 'POST',
       headers: {
@@ -33,6 +36,7 @@ const Navbar = () => {
         console.log('Error de conexión', error);
       });
   };
+
 
   return (
     <div>

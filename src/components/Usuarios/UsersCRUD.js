@@ -17,15 +17,14 @@ const UsersCRUD = () => {
             Authorization: `Bearer ${token}`
           }
         });
+
         if (response.ok) {
           const data = await response.json();
           setUsersData(data);
-        } else {
+        } else if (response.status === 401) {
           setIsAuthorized(false);
-          console.log(response);
         }
       } catch (error) {
-        setIsAuthorized(false);
         console.log(error);
       }
     };
@@ -37,6 +36,37 @@ const UsersCRUD = () => {
     }
   }, []);
 
+  const deleteUser= (id) => {
+    const token2 = localStorage.getItem('token');
+
+    const fetchUsersData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/users/'+id, {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token2}`
+          }
+        });
+
+        if (response.ok) {
+          alert("User deleted successfully")
+        } else if (response.status === 401) {
+        }
+      } catch (error) {
+        alert(error.message)
+        console.log(error);
+      }
+    };
+    if (token2) {
+      fetchUsersData();
+    }
+
+    
+  }
+
+  const handleEdit = (id) => {
+
+  } 
   const handleDelete = (id) => {
     Swal.fire({
       title: '¿Eliminar Usuario?',
@@ -51,11 +81,10 @@ const UsersCRUD = () => {
       allowEscapeKey: false
     }).then((result) => {
       if (result.isConfirmed) {
-        // Aquí puedes realizar la lógica de eliminación del usuario
-        // y actualizar los datos en el estado
-        // setUsersData(updatedData);
-
+        deleteUser(id);
         Swal.fire('Eliminado!', 'El usuario ha sido eliminado correctamente.', 'success');
+        // Recargar la página actual
+      window.location.reload();
       }
     });
   };
@@ -72,7 +101,7 @@ const UsersCRUD = () => {
 
   return (
     <div className="container">
-        <Navbar/>
+      <Navbar />
       <h1>CRUD de Usuarios</h1>
       {usersData.length === 0 ? (
         <p className="no-data-message">No hay datos disponibles.</p>
@@ -99,10 +128,14 @@ const UsersCRUD = () => {
                 <td>{user.identification}</td>
                 <td>{user.active ? 'Activo' : 'Inactivo'}</td>
                 <td>
+                  <button className="edit-button" onClick={() => handleEdit(user._id)}>
+                    <i className="fa fa-edit"></i>
+                  </button>
                   <button className="delete-button" onClick={() => handleDelete(user._id)}>
                     <i className="fa fa-trash"></i>
                   </button>
                 </td>
+                
               </tr>
             ))}
           </tbody>

@@ -37,6 +37,7 @@ const Register = () => {
         identification: "",
         password: "",
         confirmPassword: "",
+        owners: [], // Array vacío para owners
         active: true,
       });
       setErrorMessage("");
