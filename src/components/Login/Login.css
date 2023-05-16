@@ -1,0 +1,177 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos del componente de inicio de sesión */
+.login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  transition: backdrop-filter 0.5s;
+ /* background-image: url("https://media.tenor.com/N_bhbnT9xZYAAAAd/among-us-among-us-distraction-dance.gif");
+*/
+  background-image: url("https://media.istockphoto.com/id/1164422655/es/vector/hippie-dibujado-a-mano-garabatos-patr%C3%B3n-sin-costuras-fondo-hippy.jpg?s=612x612&w=is&k=20&c=OXLs3TnawJAeLtHAZuxnswtlJbaGx7UXVwvCidZjeeo=");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.login-content input,
+.login-content button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-content input:focus,
+.login-content button:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.login::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  animation: colorChange 5s infinite;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinear los campos a la izquierda */
+  justify-content: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #215ee4;
+  border-radius: 15px;
+  background-color: #72d0f82f;
+  backdrop-filter: blur(8px);
+  background-color: rgba(145, 202, 235, 0.507);
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1; 
+}
+
+
+.login-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-image img {
+  
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+ 
+}
+/* Login.css */
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+
+@keyframes colorChange {
+  0% {
+    background-color: rgba(255, 0, 0, 0.034);
+  } /* Color inicial */
+  25% {
+    background-color: rgba(0, 255, 0, 0.055);
+  } /* Color 1 */
+  50% {
+    background-color: rgba(0, 0, 255, 0.062);
+  } /* Color 2 */
+  75% {
+    background-color: rgba(255, 255, 0, 0.068);
+  } /* Color 3 */
+  100% {
+    background-color: rgba(255, 0, 255, 0.048);
+  } /* Color final */
+}
+
+.login label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+  
+  
+
+} 
+
+.login button[type="submit"] {
+ 
+  
+
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #093e70;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box; 
+  transition: transform 0.3s;
+ 
+  
+  
+}
+
+.login button[type="submit"]:hover {
+  background-color: #45a049;
+  border-radius: 15px;
+  transform: translateX(-5px);
+}
+
+
+.login p {
+  color: red;
+  margin-top: 10px;
+}

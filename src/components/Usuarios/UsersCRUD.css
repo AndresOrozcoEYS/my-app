@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("https://media.istockphoto.com/id/1164422655/es/vector/hippie-dibujado-a-mano-garabatos-patr%C3%B3n-sin-costuras-fondo-hippy.jpg?s=612x612&w=is&k=20&c=OXLs3TnawJAeLtHAZuxnswtlJbaGx7UXVwvCidZjeeo");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    transition: backdrop-filter 0.5s;
+    z-index: 1;
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Reducir opacidad */
+    pointer-events: none;
+    animation: colorChange 5s infinite;
+    z-index: -1;
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px); /* Reducir desenfoque */
+    background-color: rgba(0, 0, 0, 0.2); /* Reducir opacidad */
+    z-index: -1;
+  }
+  
+  .body:hover {
+    backdrop-filter: blur(0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  @keyframes colorChange {
+    0% { background-color: rgba(255, 0, 0, 0.007); }
+    25% { background-color: rgba(0, 255, 0, 0.027); }
+    50% { background-color: rgba(0, 0, 255, 0.034); }
+    75% { background-color: rgba(255, 255, 0, 0.041); }
+    100% { background-color: rgba(255, 0, 255, 0.048); }
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: aqua;
+  }
+  
+  .no-data-message {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  
+  th {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #1797ff;
+  }
+  
+  td {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #1797ff;
+    color: white;
+  }
+  
+  td:hover {
+    color: rgb(23, 175, 221);
+    background-color: rgba(0, 0, 0, 0.363);
+    transform: translateY(-1px);
+    }
+    
+    th {
+    border: 2px solid #1797ff;
+    background-color: #72d0f82f;
+    backdrop-filter: blur(8px);
+    background-color: rgba(145, 202, 235, 0.507);
+    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+    }
+    
+    .delete-button {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    
+    .delete-button:hover {
+    background-color: #cc0000;
+    }
+  

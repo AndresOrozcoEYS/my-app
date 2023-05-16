@@ -1,0 +1,174 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos del componente de registro */
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  backdrop-filter: blur(4px);
+  transition: backdrop-filter 0.5s;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/006/213/839/non_2x/black-and-blue-memphis-set-simple-geometric-icons-symbols-and-patterns-isolated-on-white-background-abstract-shapes-geometric-design-elements-vector.jpg");
+  
+  background-position: center;
+}
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.register::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  
+  animation: colorChange 5s infinite;
+}
+
+
+.register::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.register:hover {
+  backdrop-filter: blur(0);
+  background-color: rgba(0, 0, 0, 0.5);
+  
+}
+
+@keyframes colorChange {
+  0% { background-color: rgba(255, 0, 0, 0.034); } /* Color inicial */
+  25% { background-color: rgba(0, 255, 0, 0.055); } /* Color 1 */
+  50% { background-color: rgba(0, 0, 255, 0.062); } /* Color 2 */
+  75% { background-color: rgba(255, 255, 0, 0.068); } /* Color 3 */
+  100% { background-color: rgba(255, 0, 255, 0.048); } /* Color final */
+  
+}
+.register h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.register form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #1797ff;
+  border-radius: 15px;
+  background-color: #72d0f82f;
+  backdrop-filter: blur(8px);
+  background-color: rgba(145, 202, 235, 0.507);
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.7); 
+  position: relative;
+  z-index: 1; /* Colocar el formulario por encima del pseudo-elemento */
+
+}
+
+.register label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.register button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #093e70;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+.register button[type="submit"]:hover {
+  background-color: #45a049;
+  border-radius: 15px;
+  transform: translateX(-5px);
+  margin-right: 10px; /* Agregar margen entre los botones */
+  padding: 10px;
+
+}
+.back-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #093e70;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-right: 10px; /* Agregar margen entre los botones */
+  padding: 10px;
+
+}
+
+.back-button:hover {
+  background-color: #a04545;
+  border-radius: 15px;
+  transform: translateX(-5px);
+}
+
+
+.register .error {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+  .register form {
+    width: 100%;
+  }
+}
