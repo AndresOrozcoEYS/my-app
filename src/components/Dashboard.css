@@ -1,0 +1,67 @@
+.body{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    transition: backdrop-filter 0.5s;
+  
+    background-image: url("https://media.istockphoto.com/id/1164422655/es/vector/hippie-dibujado-a-mano-garabatos-patr%C3%B3n-sin-costuras-fondo-hippy.jpg?s=612x612&w=is&k=20&c=OXLs3TnawJAeLtHAZuxnswtlJbaGx7UXVwvCidZjeeo=");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+}
+.body::after{
+
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  
+  animation: colorChange 5s infinite;
+}
+
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .body:hover {
+    backdrop-filter: blur(0);
+    background-color: rgba(0, 0, 0, 0.5);
+    
+  }
+  
+  @keyframes colorChange {
+    0% { background-color: rgba(255, 0, 0, 0.034); } /* Color inicial */
+    25% { background-color: rgba(0, 255, 0, 0.055); } /* Color 1 */
+    50% { background-color: rgba(0, 0, 255, 0.062); } /* Color 2 */
+    75% { background-color: rgba(255, 255, 0, 0.068); } /* Color 3 */
+    100% { background-color: rgba(255, 0, 255, 0.048); } /* Color final */
+    
+  }  
+
+  .menu{
+
+    z-index: 1;
+  }
+  .body h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 1;
+    
+  }
